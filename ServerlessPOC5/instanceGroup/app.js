@@ -59,7 +59,7 @@ app.get('/', function(req, res, next) {
     if (err) return next(err);
     var keyBooks = books.map((book) => Object.assign(book, { id: book.id || book[key].id }));
     res.render('index', { books: keyBooks, user: req.session.user });
-	  });
+  });
 });
 
 /* Fetch books created by the currently logged in user and display them */
@@ -102,7 +102,6 @@ app.post('/books', function(req, res, next) {
   if (req.files['cover'])
     coverImageData = req.files['cover'].buffer;
 
-	
   var userId;
   if (req.session.user)
     userId = req.session.user.id;
