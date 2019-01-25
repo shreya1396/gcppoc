@@ -1,0 +1,12 @@
+{
+  "name": "cloud-nodejs",
+  "version": "0.0.1",
+  "description": "node.js: Build a Web App using Google Cloud Platform",
+
+  "dependencies": {
+    "@google-cloud/bigquery": "^2.0.6",
+    "@google-cloud/datastore": "^3.0.1",
+    "@google-cloud/storage": "^2.3.4",
+    "@google-cloud/vision": "^0.24.0"
+  }
+}
