@@ -1,0 +1,81 @@
+
+<h2 mat-dialog-title>Add Reviewer</h2>
+<hr>
+
+  <div class="container">
+      <mat-form-field>
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search here">
+      </mat-form-field>
+      <mat-table [dataSource]="dataSource" matSort>
+  
+          <ng-container matColumnDef="idea">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Idea</mat-header-cell>
+            <mat-cell *matCellDef="let reviewer">{{title}}</mat-cell>
+          </ng-container>
+    
+          <ng-container matColumnDef="reviewer">
+            <mat-header-cell *matHeaderCellDef>Reviewer</mat-header-cell>
+            <mat-cell *matCellDef="let reviewer">{{reviewer.reviewer}}</mat-cell>
+          </ng-container>
+    
+          <mat-header-row *matHeaderRowDef="displayedColumns; sticky:true" color="primary"></mat-header-row>
+          <mat-row *matRowDef="let row; columns:displayedColumns"></mat-row>
+        </mat-table>
+        <mat-paginator class="page-container" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+        <br>
+        
+
+        <mat-form-field>
+            <input matInput (keyup)="applyFilter1($event.target.value)" placeholder="Search here">
+        </mat-form-field>
+        <mat-table [dataSource]="dataSource1" matSort>
+    
+            <ng-container matColumnDef="select">
+                
+                <mat-header-cell *matHeaderCellDef>
+                    <mat-checkbox (change)="$event ? masterToggle() : null"
+                                [checked]="selection.hasValue() && isAllSelected()"
+                                [indeterminate]="selection.hasValue() && !isAllSelected()">
+                </mat-checkbox>
+                </mat-header-cell>
+                  <mat-cell *matCellDef="let row">
+                    <mat-checkbox 
+                                  (change)="$event ? selection.toggle(row) : null"
+                                  [checked]="selection.isSelected(row)">
+                    </mat-checkbox>
+                  </mat-cell>
+              </ng-container>
+    
+    
+    
+            <ng-container matColumnDef="user_name">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>User Name</mat-header-cell>
+              <mat-cell *matCellDef="let user">{{user.name}}</mat-cell>
+            </ng-container>
+      
+            <ng-container matColumnDef="role">
+              <mat-header-cell *matHeaderCellDef>Role</mat-header-cell>
+              <mat-cell *matCellDef="let user">{{user.role}}</mat-cell>
+            </ng-container>
+      
+      
+            <mat-header-row *matHeaderRowDef="displayedColumns1; sticky:true" color="primary"></mat-header-row>
+            <mat-row *matRowDef="let row; columns:displayedColumns1"></mat-row>
+          </mat-table>
+          <mat-paginator class="page-container" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+          <br>    
+          <button (click)="closeDialog()" class="button" mat-raised-button matTooltip="Close" >CLOSE</button>
+          <button  (click)="addReviewer()" class="button" mat-raised-button matTooltip="Assign Reviewer to idea" >ADD USER</button>
+
+  
+        
+
+</div>
+
+
+
+<!-- <mat-dialog-actions align="end">
+    <button class="mat-raised-button btn1" (click)="doNotProceed()">No</button>
+    <span class="spacer"></span>
+    <button class="mat-raised-button btn2" (click)="proceed()" >Yes</button>
+</mat-dialog-actions> -->

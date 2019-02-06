@@ -1,0 +1,93 @@
+<!-- <div class="container" style="outline-style:solid;height:80%;width:60%;outline-width: 1px" > -->
+<br>
+<br>
+   <div class="container">
+        <h1>New Idea Form</h1>
+        <hr>
+        <form #ideaform="ngForm" (submit)="submitFunc()" ng-app="ideaApp" ng-controller="ideaCtrl" >
+          <div class="form-group">
+            <label for="name">Owner</label>
+            <input type="text" class="form-control" id="owner" name="owner" [(ngModel)]="idea.idea_owner" required>
+          </div>
+      
+          <div class="form-group">
+            <label for="name">Title</label>
+            <input type="text" class="form-control" id="title" required [(ngModel)]="idea.idea_title" name="title" #temp="ngModel" placeholder="Enter the Title">
+          </div>
+          <div [hidden]="temp.valid || temp.pristine" class="alert alert-danger">
+            Title is required
+          </div>
+      
+          <div class="form-group">
+            <label for="alterEgo">Description</label>
+            <textarea class="form-control" placeholder="leave a description" id="description" name="description" [(ngModel)]="idea.idea_description"></textarea>
+          </div>
+      
+                    <div class="row">
+                        <!-- <div class="form-group col-md-6" >
+                          <label for="name">Idea Box Name</label>
+                          <select class="form-control" id="category" name="category" required [(ngModel)] ="idea.category">
+                            <option *ngFor="let x of category" [value]="x.type">{{x.type.toUpperCase()}}</option>
+                          </select>
+                      </div> -->
+                      
+                        <div class="form-group col-md-6" >
+                            <label for="name">Idea Box Name</label>
+
+                            <select *ngIf="!router.url.includes('/ideaboxpage')" class="form-control" id="category" name="category" required [(ngModel)] ="idea.category">
+                              <option *ngFor="let x of category" [value]="x.type">{{x.type.toUpperCase()}}</option>
+                            </select>
+                            
+                            <input *ngIf="router.url.includes('/ideaboxpage')" type="text" class="form-control " id="category" name="category" [(ngModel)]="idea.category" [readonly]="true" >
+                        </div>
+                        <!-- <div class="form-group col-md-6" *ngIf="router.url.includes('ideaboxpage/')">
+                          <label for="name">Idea Box Name</label>
+          
+                          <input type="text" class="form-control " id="category" name="category" [(ngModel)]="idea.category" [readonly]="true" >
+                        </div> -->
+
+
+                        <div class="form-group col-md-6">
+                              <label for="name">Tag it with</label>
+                              <select class="form-control" id="tag" name="tag" required [(ngModel)]="idea.tags">
+                              <option *ngFor="let x of tags" [value]="x.tag">{{x.tag}}</option>
+                              </select>
+                          </div>
+                    </div>
+          
+           <!-- <div class="form-group" *ngIf="router.url.includes('/user_dashboard/ideaboxpage/req_display_form') || router.url.includes('/reviewer/ideaboxpage/req_display_form')">
+              <label for="name">Filed Against:</label> -->
+            <div class="form-group" *ngIf="router.url.includes('ideaboxpage/')">
+                <label for="name">Filed Against:</label>
+
+                <input type="text" class="form-control " id="requirements" name="requirements" [(ngModel)]="requirement_obj.requirement" [readonly]="true" >
+            </div>
+            
+            <!-- <div class="form-group" *ngIf="!router.url.includes('/user_dashboard/ideaboxpage/req_display_form') && !router.url.includes('/reviewer/ideaboxpage/req_display_form')"> -->
+              <div class="form-group" *ngIf="!router.url.includes('/ideaboxpage')">
+                <label for="name">Filed Against:</label>
+                <select class="form-control" id="requirements" name="requirements" 
+                [(ngModel)]="idea.submitted_against" required>
+                    <option *ngFor="let x of req" [value]="x.id">{{x.requirement}}</option>
+                  </select>
+              </div> 
+
+              <!--<div class="form-group">
+                <label for="name">Attachment(.pdf,.doc,.docx):</label>
+                <br>
+                <input type="file" (change)="fileChange($event)" placeholder="Upload file" accept=".pdf,.doc,.docx">
+              </div>-->
+
+      
+      
+          <!-- <div class="form-group">
+            <tags-input ng-model="tags"></tags-input>
+          </div> -->
+          
+      
+          <button type="submit" class="btn btn-success" [disabled]="!ideaform.form.valid">Submit</button>
+          <!-- (click)="openDialog()" -->
+        </form>
+      </div>
+      <br>
+      

@@ -1,0 +1,44 @@
+.example-card {
+    width: 250px;
+    height: 250px;
+  }
+  .example-card1 {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .example-header-image {
+    background-image: url('src/assets/images/icon_create_new_idea.jpg');
+    background-size: cover;
+  }
+  
+  .example-header-image1 {
+    background-image: url('src/assets/images/icon_list_ideas.png');
+    background-size: cover;
+  }
+  
+  .example-header-image2 {
+    background-image: url('src/assets/images/icon_manage_idea_box.png');
+    background-size: cover;
+  }
+  
+  .example-header-image3 {
+    background-image: url('src/assets/images/icon_manage_user_1.png');
+    background-size: cover;
+  }
+  
+  th, td {
+    padding: 25px;
+  }
+  
+  img{
+    width:  250px;
+    height: 200px;
+    border-width: 1px;   
+    border-color: black;
+    border-style: solid;
+  }
+  
+  /* .mat-card-title{
+    font-size: 12px;
+  } */
