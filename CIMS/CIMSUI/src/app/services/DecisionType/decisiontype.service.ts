@@ -7,7 +7,7 @@ import { DecisionType } from '../../classes/decision-type';
 })
 export class DecisiontypeService {
 
-  service_url='http://10.53.17.229:8000/api/dao/decisiontypes/';
+  service_url='https://innovation-230909.appspot.com/api/dao/decisiontypes/';
   constructor(private http:HttpClient) { }
 
   getData(){

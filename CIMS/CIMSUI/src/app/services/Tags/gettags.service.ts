@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http'
   providedIn: 'root'
 })
 export class GettagsService {
-  service_url='http://10.53.17.229:8000/api/dao/tags/';
+  service_url='https://innovation-230909.appspot.com/api/dao/tags/';
 
   constructor(private http:HttpClient) {
 

@@ -15,7 +15,7 @@ export class BoxownerService {
 
   msg:string;
   dialogConfig = new MatDialogConfig();
-  service_url='http://10.53.17.229:8000/api/dao/boxowner/';
+  service_url='https://innovation-230909.appspot.com/api/dao/boxowner/';
   constructor(private http:HttpClient, private dialog: MatDialog, private router: Router) {
     this.dialogConfig.disableClose = true;
     this.dialogConfig.autoFocus = true;

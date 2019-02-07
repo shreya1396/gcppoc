@@ -16,9 +16,9 @@ export class AddIdeaService {
   msg:string;
   dialogConfig = new MatDialogConfig();
   idea:Idea;  
-  service_url='http://10.53.17.229:8000/api/dao/ideas/';
-  service_url_byneed='http://10.53.17.229:8000/api/dao/ideas/needs/';
-  service_url_bymanager='http://10.53.17.229:8000/api/dao/ideas/managers/';
+  service_url='https://innovation-230909.appspot.com/api/dao/ideas/';
+  service_url_byneed='https://innovation-230909.appspot.com/api/dao/ideas/needs/';
+  service_url_bymanager='https://innovation-230909.appspot.com/api/dao/ideas/managers/';
   constructor(private http:HttpClient,private dialog: MatDialog,private decisiontypeservice: DecisiontypeService,private decisionService:DecisionService) {
       this.dialogConfig.disableClose = true;
       this.dialogConfig.autoFocus = true;

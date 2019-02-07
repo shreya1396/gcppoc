@@ -7,7 +7,7 @@ import { Role } from 'src/app/classes/role';
 })
 export class RoleService {
 
-  service_url='http://10.53.17.229:8000/api/dao/roles/';
+  service_url='https://innovation-230909.appspot.com/api/dao/roles/';
   constructor(private http:HttpClient) { }
 
   getData(){

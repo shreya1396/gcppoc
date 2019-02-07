@@ -8,7 +8,7 @@ import { DialogBoxComponent } from 'src/app/components/dialog-box/dialog-box.com
 })
 export class NotifyUserService {
 
-  service_url= "http://10.53.17.229:8000/api/dao/notify/"
+  service_url= "https://innovation-230909.appspot.com/api/dao/notify/"
   msg:string
   dialogConfig = new MatDialogConfig();
   constructor(private http: HttpClient, private dialog: MatDialog) { }

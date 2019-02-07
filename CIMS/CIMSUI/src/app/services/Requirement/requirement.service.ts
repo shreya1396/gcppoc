@@ -9,7 +9,7 @@ import { forEach } from '@angular/router/src/utils/collection';
 })
 export class RequirementService {
 
-  service_url="http://10.53.17.229:8000/api/dao/ideaneeds/";
+  service_url="https://innovation-230909.appspot.com/api/dao/ideaneeds/";
   
   req:Array<Reuirement>;
   requirement:Reuirement;
@@ -30,7 +30,7 @@ export class RequirementService {
       //       }
       //     })
       // });
-      return this.http.get<Reuirement>("http://10.53.17.229:8000/api/dao/ideaneeds/"+id);
+      return this.http.get<Reuirement>("https://innovation-230909.appspot.com/api/dao/ideaneeds/"+id);
    }
 
    

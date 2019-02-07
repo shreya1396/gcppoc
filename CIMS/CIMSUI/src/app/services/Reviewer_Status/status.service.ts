@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class StatusService {
 
-  service_url="http://10.53.17.229:8000/api/dao/review_status/";
+  service_url="https://innovation-230909.appspot.com/api/dao/review_status/";
   constructor(private http:HttpClient) { }
 
   getData(){

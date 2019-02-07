@@ -13,8 +13,8 @@ export class ReviewerService {
 
   reviewer:Reviewer
   msg:string;
-  service_url='http://10.53.17.229:8000/api/dao/reviewers/';
-  service_url_byideaid='http://10.53.17.229:8000/api/dao/review/';
+  service_url='https://innovation-230909.appspot.com/api/dao/reviewers/';
+  service_url_byideaid='https://innovation-230909.appspot.com/api/dao/review/';
   dialogConfig = new MatDialogConfig();
   
   constructor(private router: Router,private http:HttpClient,private dialog: MatDialog,) {
@@ -75,7 +75,7 @@ export class ReviewerService {
 
    updateData(reviewer){
     this.reviewer=reviewer;
-    this.http.put('http://10.53.17.229:8000/api/dao/review/'+reviewer.idea_id+'/',reviewer).subscribe(data => {
+    this.http.put('https://innovation-230909.appspot.com/api/dao/review/'+reviewer.idea_id+'/',reviewer).subscribe(data => {
       //console.log(data);
        this.msg="Successfully Updated review";   
        this.dialogConfig.data = this.msg;

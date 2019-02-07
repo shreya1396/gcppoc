@@ -9,7 +9,7 @@ import { DialogBoxComponent } from 'src/app/components/dialog-box/dialog-box.com
 })
 export class DecisionService {
 
-  service_url='http://10.53.17.229:8000/api/dao/decision/';
+  service_url='https://innovation-230909.appspot.com/api/dao/decision/';
   msg:string
   dialogConfig = new MatDialogConfig();
 

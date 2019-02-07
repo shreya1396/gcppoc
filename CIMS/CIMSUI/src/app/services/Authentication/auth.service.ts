@@ -9,7 +9,7 @@ import { LoginUser } from 'src/app/classes/login-user';
   providedIn: 'root'
 })
 export class AuthService {
-  service_url='http://10.53.17.229:8000/api/dao/auth/';
+  service_url='https://innovation-230909.appspot.com/api/dao/auth/';
 
   private isAdmin=JSON.parse(localStorage.getItem('isAdmin') || 'false');
   private isInnovationManagaer=JSON.parse(localStorage.getItem('isInnovationManager') || 'false');
