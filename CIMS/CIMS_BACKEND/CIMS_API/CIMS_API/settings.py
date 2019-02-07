@@ -86,7 +86,7 @@ DATABASES = {
         'NAME': 'cims',
         'USER': 'root',
         'PASSWORD': 'root123',
-        'HOST' :'127.0.0.1',
+        'HOST' : '/cloudsql/innovation-230909:us-central1:cimsinstance',
         'PORT' : '3306'
     }
 }
