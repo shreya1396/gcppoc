@@ -1,4 +1,3 @@
-# [START django_app]
 runtime: python37
 
 handlers:
