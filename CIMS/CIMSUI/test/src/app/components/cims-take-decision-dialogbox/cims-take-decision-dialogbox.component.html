@@ -1,0 +1,23 @@
+
+<h2 mat-dialog-title>Final Decision</h2>
+<hr>
+<br>
+<div class="container">
+    <form #ideaform="ngForm" (submit)="submitFunc()">
+        <div class="form-group">
+            <label for="name">Decide it as:</label>
+            <select class="form-control" id="decision" name="decision" required [(ngModel)] ="decision.decision">
+              <option *ngFor="let x of decisions" [value]="x.value">{{x.value}}</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+              <label for="alterEgo">Description</label>
+              <textarea required class="form-control" placeholder="leave a Comment" id="comment" name="comment" [(ngModel)]="decision.comment"></textarea>
+            </div>
+          <button (click)="closeDialog()" class="button" mat-raised-button matTooltip="Close" >CLOSE</button>
+
+          <button type="submit" class="button" [disabled]="!ideaform.form.valid" matTooltip="Submit">SUBMIT</button>
+    </form>
+</div>
+<br>

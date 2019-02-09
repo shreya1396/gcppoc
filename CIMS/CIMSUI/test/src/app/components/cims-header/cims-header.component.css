@@ -1,0 +1,74 @@
+header.custom-header {
+  background: #117A65;
+  height: 50px;
+  }
+  .mdl-layout__header-row span.mdl-layout-title {
+    color: white;
+    cursor: pointer;
+
+    display: inline-flex;
+    vertical-align: middle;
+  }
+  .custom-header .material-icons {
+    color: #fff;
+  }
+  .custom-header a.mdl-navigation__link {
+    color: #eee;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .custom-header a.mdl-navigation__link:hover {
+    color: #fff;
+  }
+  .mdl-layout__drawer span.mdl-layout-title {
+    background: #263238;
+    color: #ffb648;
+  }
+  .mdl-layout__drawer a.mdl-navigation__link {
+    color: #eee;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .mdl-layout__drawer a.mdl-navigation__link:hover {
+    color: #000;
+  }
+
+  .topnav-right {
+    float: right;
+  }
+
+  .btn {
+    background-color: #117A65;
+    display: inline-flex;
+    vertical-align: middle;
+    display: inline-flex; 
+     vertical-align: middle;
+    /* height: 40px; */
+  }
+  header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+  } 
+
+  .slide-div {
+    min-height: 100px; 
+    margin-left: 82%;
+    margin-top: 4%;  
+    background-color: #117A65;
+  }
+ 
+  .slide-header-text {
+    color: white;
+    padding-top:  10%;
+    padding-left: 10%;
+    font-size: 100%;
+    font-family:  Tahoma, sans-serif;
+  }
+  .slide-text{
+    color: white;
+    padding-top:  2%;
+    padding-left: 10%;
+    font-size: 100%;
+    font-family:  Tahoma, sans-serif;
+  }

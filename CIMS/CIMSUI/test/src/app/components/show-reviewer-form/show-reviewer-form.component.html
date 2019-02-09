@@ -1,0 +1,85 @@
+<br>
+<br>
+<div class="container" >
+    <h1>Review Form</h1>
+    <hr>
+    <form #ideaform="ngForm" (submit)="submitFunc()"  >
+        
+      <div class="row">
+          <div class="form-group col-sm-6">
+              <label for="name">Owner</label>
+              <input type="text" class="form-control" id="owner" name="owner" [(ngModel)]="idea.idea_owner" [readonly]="true">
+            </div>
+        
+            <div class="form-group col-sm-6">
+              <label for="name">Title</label>
+              <input type="text" class="form-control " id="title" [(ngModel)]="idea.idea_title" name="title" #temp="ngModel" [readonly]="true">
+            </div>
+      </div>
+      
+      
+  
+      <div class="form-group">
+        <label for="alterEgo">Description</label>
+        <textarea class="form-control " id="description" name="description" [(ngModel)]="idea.idea_description" [readonly]="true"></textarea>
+      </div>
+      
+      <div class="row">
+          <div class="form-group col-sm-4">
+              <label for="name">Idea Box Name</label>
+              <input type="text" class="form-control" id="category" name="category" [(ngModel)]="idea.category" [readonly]="true">
+              
+          </div>
+      
+          <div class="form-group col-sm-4">
+            <label for="name">Tag it with</label>
+            <input type="text" class="form-control " id="tag" name="tag" [(ngModel)]="idea.tags" [readonly]="true">      
+          </div>
+
+          <div class="form-group col-sm-4">
+              <label for="alterEgo">Reviewer Name</label>
+              <input type="text" class="form-control " id="reviewer_name" name="reviewer_name" [(ngModel)]="idea.reviewer_name" [readonly]="true" >
+          </div>
+      </div>
+      
+      <!-- <div class="form-group">
+          <label for="name">Category</label>
+          
+          <select class="form-control" id="category" name="category" required [(ngModel)]="idea.category">
+              <option *ngFor="let x of category" [selected]="x === idea.category" [value]="x">{{x}}</option>
+          </select>
+      </div>
+  
+      <div class="form-group">
+        <label for="name">Tag it with</label>
+        <select class="form-control" id="tag" name="tag" required [(ngModel)]="idea.tags">
+          <option *ngFor="let x of tags" [selected]="x === idea.tags" [value]="x.tag_id">{{x.tag}}</option>
+        </select>
+      </div> -->
+
+      
+
+      <div class="form-group">
+            <label for="alterEgo">Reviewer Status</label>
+            <select class="form-control" id="review_status" name="review_status" required [(ngModel)]="idea.review_status">
+                <option *ngFor="let x of review_status" [selected]="x.status === idea.review_status" [value]="x.status">{{x.status}}</option>
+              </select>
+      </div>
+
+      <div class="form-group">
+          <label for="alterEgo">Reviewer Comments</label>
+          <!-- <input type="text" class="form-control" id="review_comment" name="review_comment" [(ngModel)]="idea.review_comment"> -->
+          <textarea class="form-control" placeholder="leave a description" id="review_comment" name="review_comment" [(ngModel)]="idea.review_comment" required></textarea>
+      </div>
+      
+      <!-- <div class="form-group">
+        <tags-input ng-model="tags"></tags-input>
+      </div> -->
+      
+  
+      <button type="submit" class="btn btn-success">Submit</button>
+  
+    </form>
+  </div>
+  <br>
+  

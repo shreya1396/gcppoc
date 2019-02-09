@@ -1,0 +1,15 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.content{
+  position: fixed;
+  float: left;
+  overflow-x:auto;
+  overflow-y: scroll;
+  width: 570px;
+  bottom: 40px;
+  top: 80px;
+}
+
+.body{
+    overflow:hidden;
+}
