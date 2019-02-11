@@ -47,9 +47,9 @@ export class NewIdeaFormComponent implements OnInit {
   requirement_obj= new Reuirement('','','','');
   //2018-11-01T11:11:11Z
   date:Date
-  idea = new Idea(3,'','','','','',this.dateStr,this.dateStr,1,'','','');
+  idea = new Idea(3,'','','','','',this.dateStr,this.dateStr,1);
 
-  constructor(private tagService:GettagsService,private ideaService:AddIdeaService,private userService:GetUserService,public router:Router,private reqservice:RequirementService,private dialog: MatDialog,private datePipe: DatePipe,private categoryservice: CategoryService, public route: ActivatedRoute,private decisiontypeservice: DecisiontypeService,private decisionService:DecisionService) { 
+  constructor(private tagService:GettagsService,private ideaService:AddIdeaService,private userService:GetUserService,private router:Router,private reqservice:RequirementService,private dialog: MatDialog,private datePipe: DatePipe,private categoryservice: CategoryService, private route: ActivatedRoute,private decisiontypeservice: DecisiontypeService,private decisionService:DecisionService) { 
 
     this.route.params.subscribe( params => {
       this.idea_need_id=(params['idea_need_id']);

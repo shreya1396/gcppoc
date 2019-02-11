@@ -39,7 +39,7 @@ export class IdeaboxService {
       // alert("Error in submitting Idea Box: Idea Box is already present ");
     });
     console.log("HIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII")
-    this.http.post('https://innovation-230909.appspot.com/api/dao/boxowner/',ideaboxmap).subscribe(data => {
+    this.http.post('http://10.53.17.229:8000/api/dao/boxowner/',ideaboxmap).subscribe(data => {
       console.log(data)
     });
   }
@@ -78,7 +78,7 @@ export class IdeaboxService {
   }
 
   updateUserForIdeaBox(ideaboxmap){
-    this.http.post('https://innovation-230909.appspot.com/api/dao/boxowner/',ideaboxmap).subscribe(data => {
+    this.http.post('http://10.53.17.229:8000/api/dao/boxowner/',ideaboxmap).subscribe(data => {
       this.msg="Successfully added Box owner";
       this.dialogConfig.data = this.msg;
       this.dialog.open(DialogBoxComponent,this.dialogConfig);

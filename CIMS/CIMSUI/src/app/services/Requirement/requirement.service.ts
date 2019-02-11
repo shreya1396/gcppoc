@@ -30,7 +30,7 @@ export class RequirementService {
       //       }
       //     })
       // });
-      return this.http.get<Reuirement>("https://innovation-230909.appspot.com/api/dao/ideaneeds/"+id);
+      return this.http.get<Reuirement>("http://10.53.17.229:8000/api/dao/ideaneeds/"+id);
    }
 
    

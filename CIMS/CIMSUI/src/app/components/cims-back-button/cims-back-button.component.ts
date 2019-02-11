@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class CimsBackButtonComponent implements OnInit {
 
-  constructor(public location: Location,public router: Router) { }
+  constructor(private location: Location,private router: Router) { }
   urls= ['innovation','admin_dashboard','user_dashboard','reviewer']
   goBack(){
     console.log(this.router.url+" is urllllllllllllllllllll");

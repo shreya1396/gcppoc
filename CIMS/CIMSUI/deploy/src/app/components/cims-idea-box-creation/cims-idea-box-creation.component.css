@@ -1,0 +1,42 @@
+button {
+    display: inline-block;
+    border-radius: 5px;
+    background-color: #64a32a;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px;
+    width: 130px;
+    height: 50px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    text-transform:uppercase;
+    overflow-wrap: break-word;
+
+  }
+
+button:hover {
+    background-color: white; 
+    color: black;
+    border: 2px solid black;
+    overflow-wrap: break-word;
+}
+h5{
+    text-align: center;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.container{
+
+    width: 75%;
+    text-align: left;
+    background-color: rgb(252, 249, 249);
+
+    padding: 10px;
+    /* box-shadow: 5px 10px 8px #888888; */
+    box-shadow: 0px 0px 2px 2px #888888;
+}

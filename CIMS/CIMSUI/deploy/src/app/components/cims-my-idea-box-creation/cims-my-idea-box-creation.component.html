@@ -1,0 +1,72 @@
+<!-- <p>
+  cims-my-idea-box-creation works!
+</p>
+<br>
+<div class="container">
+    <h5>My Idea Boxes<hr></h5>
+    <ng-container *ngIf="boxOwnerArray.length > 0" >
+       
+      <span *ngFor="let i of boxOwnerArray">
+        
+       <button (click)="displayForm(i.idea_box)" [routerLink]="['req_display_form',i.idea_box]">
+          {{i.idea_box}}
+       </button>
+      
+      </span>
+    
+    </ng-container>
+</div>
+<br><br> -->
+
+  <div class="container">
+      <button (click)="toCSV()" class="button" mat-raised-button matTooltip="Export Ideas to CSV" >Export to CSV</button>
+      <mat-form-field>
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search here">
+      </mat-form-field>
+
+    <mat-table [dataSource]="dataSource " matSort>
+      <ng-container matColumnDef="title">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Title</mat-header-cell>
+        <mat-cell *matCellDef="let idea">{{idea.idea_title}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="description">
+        <mat-header-cell id="justify" *matHeaderCellDef>Description</mat-header-cell>
+        <mat-cell *matCellDef="let idea">{{idea.idea_description}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="category">
+        <mat-header-cell *matHeaderCellDef mat-sort-header >Idea Box Name</mat-header-cell>
+        <mat-cell *matCellDef="let idea" style="justify-content:center;">{{idea.category.toUpperCase()}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="Decision">
+          <mat-header-cell *matHeaderCellDef mat-sort-header >Final Decision</mat-header-cell>
+          <mat-cell *matCellDef="let idea"  style="justify-content:center;">
+            {{idea[0]?.decision}}
+          </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="actionsColumn">
+        <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+        <mat-cell style="justify-content:center;" *matCellDef="let idea" id="action_column" > 
+          <!-- <a><mat-icon matTooltip="Notify Users for this Idea">notifications</mat-icon></a>        -->
+          <!-- <button (click)="addReviewer(idea.id,idea.idea_owner)"></button>>Add Reviewer</button> -->
+          <!-- <button class="btn" (click)="addReviewer(idea)">Add Reviewer</button>
+          <button class="btn" (click)="takeDecision(idea)">Take Decisions</button>
+          <button class="btn" (click)="viewReviews(idea)">View Review</button> -->
+          <a (click)="addReviewer(idea)"><mat-icon class="assign" matTooltip="Assign reviewer to idea">group_add</mat-icon></a>       
+          <a (click)="takeDecision(idea)"><mat-icon class="assign"  matTooltip="Take decisions">contact_support</mat-icon></a>       
+          <a (click)="viewReviews(idea)"><mat-icon class="assign" matTooltip="View reviews">assignment</mat-icon></a>       
+
+
+        </mat-cell>
+      </ng-container>
+      
+
+      <mat-header-row *matHeaderRowDef="displayedColumns; sticky:true" color="primary"></mat-header-row>
+      <mat-row *matRowDef="let row; columns:displayedColumns"></mat-row>
+    </mat-table>
+    <mat-paginator class="page-container" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+  <br><br><br><br><br><br>
+
+
+

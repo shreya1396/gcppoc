@@ -1,0 +1,70 @@
+<div class="container">
+      
+        <mat-table [dataSource]="dataSource1" matSort>
+          <ng-container matColumnDef="idea_box">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Idea Box Type</mat-header-cell>
+            <mat-cell *matCellDef="let boxowner">{{boxowner.idea_box.toUpperCase()}}</mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="innovation_manager_name">
+            <mat-header-cell *matHeaderCellDef>Innovation Manager Name</mat-header-cell>
+            <mat-cell *matCellDef="let boxowner">{{boxowner.innovation_manager_name}}</mat-cell>
+          </ng-container>
+          <mat-header-row *matHeaderRowDef="displayedColumns1; sticky:true" color="primary"></mat-header-row>
+          <mat-row *matRowDef="let row; columns:displayedColumns1"></mat-row>
+        </mat-table>
+        <mat-paginator class="page-container" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+      
+      <br><br>
+       
+    <!-- <button (click)="toCSV()" class="button" mat-raised-button matTooltip="Export Users to CSV" >Export to CSV</button> -->
+    <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search here">
+    </mat-form-field>
+    <mat-table [dataSource]="dataSource" matSort>
+
+        <ng-container matColumnDef="select">
+            
+            <mat-header-cell *matHeaderCellDef>
+                <mat-checkbox (change)="$event ? masterToggle() : null"
+                            [checked]="selection.hasValue() && isAllSelected()"
+                            [indeterminate]="selection.hasValue() && !isAllSelected()">
+              </mat-checkbox>
+            </mat-header-cell>
+              <mat-cell *matCellDef="let row">
+                <mat-checkbox (click)="$event.stopPropagation()"
+                              (change)="$event ? selection.toggle(row) : null"
+                              [checked]="selection.isSelected(row)">
+                </mat-checkbox>
+              </mat-cell>
+          </ng-container>
+
+
+
+        <ng-container matColumnDef="user_name">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>User Name</mat-header-cell>
+          <mat-cell *matCellDef="let user">{{user.name}}</mat-cell>
+        </ng-container>
+  
+        <ng-container matColumnDef="role">
+          <mat-header-cell *matHeaderCellDef>Role</mat-header-cell>
+          <mat-cell *matCellDef="let user">{{user.role}}</mat-cell>
+        </ng-container>
+  
+        <!-- <ng-container matColumnDef="actionsColumn">
+            <mat-header-cell *matHeaderCellDef>Action</mat-header-cell> -->
+
+
+            <!-- <mat-cell *matCellDef="let user"> <a (click)="editThisUser(user.id)" routerLinkActive="active"><mat-icon>create</mat-icon></a></mat-cell> -->
+  
+            <!-- <mat-cell *matCellDef="let user"> <a [routerLink]="['edit_access',user.user_id]"><mat-icon matTooltip="Edit user access">create</mat-icon></a></mat-cell>
+          </ng-container> -->
+        
+  
+        <mat-header-row *matHeaderRowDef="displayedColumns; sticky:true" color="primary"></mat-header-row>
+        <mat-row *matRowDef="let row; columns:displayedColumns"></mat-row>
+      </mat-table>
+      <mat-paginator class="page-container" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+      <br>
+      <button (click)="assignUsers()" class="button" mat-raised-button matTooltip="Assign User to Idea Box" >ADD USERS</button>
+</div>
+<!-- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->

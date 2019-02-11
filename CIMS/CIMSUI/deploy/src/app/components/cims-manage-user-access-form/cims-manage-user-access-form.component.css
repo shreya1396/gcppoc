@@ -1,0 +1,10 @@
+.container{
+    /* height: 550px; */
+    width: 500px;
+    background-color: rgb(252, 249, 249);
+    /* background-color: rgb(255, 253, 253); */
+    border-left: 1px solid;
+    border-top: 1px solid; 
+    padding: 10px;
+    box-shadow: 5px 10px 8px #888888;
+}

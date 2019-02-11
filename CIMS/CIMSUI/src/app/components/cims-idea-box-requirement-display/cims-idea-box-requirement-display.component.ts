@@ -22,7 +22,7 @@ export class CimsIdeaBoxRequirementDisplayComponent implements OnInit {
   
   dataSource;
   displayedColumns = ['idea_box_type','requirement','requirement_description','actionsColumn'];
-  constructor(public getideaneeds : IdeaneedService, public route : ActivatedRoute,public ideaboxservice:IdeaboxService,public router: Router,public changeDetectorRefs: ChangeDetectorRef) { 
+  constructor(private getideaneeds : IdeaneedService, private route : ActivatedRoute,private ideaboxservice:IdeaboxService,private router: Router,private changeDetectorRefs: ChangeDetectorRef) { 
     this.ideaneedsArray=[];
     this.idea_type="";
     this.route.params.subscribe( params => {

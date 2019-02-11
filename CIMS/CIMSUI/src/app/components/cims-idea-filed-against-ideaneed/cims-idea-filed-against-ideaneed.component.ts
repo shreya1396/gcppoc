@@ -23,7 +23,7 @@ export class CimsIdeaFiledAgainstIdeaneedComponent implements OnInit {
   displayedColumns;
   displayedColumns_admin = ['title','description','category'];
   displayedColumns_innovation = ['title','description','category','actionsColumn']; 
-  constructor(public dialog: MatDialog, public route: ActivatedRoute, public ideaService: AddIdeaService,public router: Router) { 
+  constructor(private dialog: MatDialog, private route: ActivatedRoute, private ideaService: AddIdeaService,private router: Router) { 
     this.route.params.subscribe( params => this.idea_need_id=(params['idea_need_id']));
     if(localStorage.getItem('userType') == 'INNOVATION_MANAGER'){
       this.displayedColumns=this.displayedColumns_innovation

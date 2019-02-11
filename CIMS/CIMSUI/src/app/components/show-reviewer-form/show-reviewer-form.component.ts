@@ -16,17 +16,28 @@ import { Reviewerstatus } from 'src/app/classes/reviewerstatus';
 })
 export class ShowReviewerFormComponent implements OnInit {
 
-  idea = new Idea('','','','','','','','','','','','');
+  idea = new Idea('','','','','','','','','');
   tags:Array<Tag>;
   review_status:Array<Reviewerstatus>;
 
-  constructor(public route: ActivatedRoute, public tagService:GettagsService,public statusserivce: StatusService,public ideaService:AddIdeaService,public dialog: MatDialog) { 
+  constructor(private route: ActivatedRoute, private tagService:GettagsService,private statusserivce: StatusService,private ideaService:AddIdeaService,private dialog: MatDialog) { 
     
   }
 
-submitFunc(){
-}
+  // submitFunc(){
+  //     this.idea.reviewer_name=localStorage.getItem('current_user');
+  //     const dialogConfig = new MatDialogConfig();
+  //     dialogConfig.disableClose = true;
+  //     dialogConfig.autoFocus = true;
+  //     dialogConfig.data={
+  //       idea: this.idea,
+  //       type: "update",
+  //       title: "Confirm the changes?"
+  //     }
+  //     this.dialog.open(ConfirmationDialogBoxComponent, dialogConfig);
 
+  //   //this.ideaService.updateIdea(this.idea);
+  // }
 
   ngOnInit() {
 
