@@ -10,11 +10,12 @@ COPY src /usr/src/app/src
 COPY angular.json /usr/src/app/
 COPY cors.json /usr/src/app/
 COPY package.json /usr/src/app/
+COPY package-lock.json /usr/src/app/
 COPY tsconfig.json /usr/src/app/
 COPY tslint.json /usr/src/app/
+RUN npm install
 RUN npm install -g @angular/cli
-#RUN npm install -g @angular-devkit/build-angular
-# RUN ng build
+RUN ng build
 
 # start app
-#CMD ng serve --host 0.0.0.0
+CMD ng serve --host 0.0.0.0
