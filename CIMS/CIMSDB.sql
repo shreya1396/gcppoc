@@ -35,7 +35,7 @@ CREATE TABLE `Auth` (
 
 LOCK TABLES `Auth` WRITE;
 /*!40000 ALTER TABLE `Auth` DISABLE KEYS */;
-INSERT INTO `Auth` VALUES ('admin','adminabc123'),('akansha_shrivas','akanshaabc123'),('hemant_raisinghani','hemantabc123'),('JAKIR_SHAIKH','abc123'),('prabhav_gaunekar','prabhavabc123');
+INSERT INTO `Auth` VALUES ('admin','admin123'),('lokendra_malik','lokendra123'),('hemant_raisinghani','hemant123'),('chandan_abhyankar','chandan123'),('prabhav_gaunekar','prabhavabc123');
 /*!40000 ALTER TABLE `Auth` ENABLE KEYS */;
 UNLOCK TABLES;
 
